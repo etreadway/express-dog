@@ -15,9 +15,17 @@ app.set('view engine', 'html');
 
 const server = http.createServer(app);
 const db = require('./db');
+const { title } = require('process');
 
 app.get('/', (req, res) => {
-    res.render('home');
+    res.render('home', {
+        locals: {
+            title: 'Dog Project'
+        },
+        partials: {
+            head: '/partials/head'
+        }
+    });
 });
 
 app.get('/dog-list', (req, res) => {
@@ -25,7 +33,11 @@ app.get('/dog-list', (req, res) => {
         locals: {
             dogs: db,
             path: req.path,
+            title: 'List of Dogs'
         },
+        partials: {
+            head: '/partials/head'
+        }
     });
 });
 
@@ -38,7 +50,11 @@ app.get('/dog-list/:name', (req, res) => {
         console.log(dog);
         res.render('dog.html', {
             locals: {
-                dog
+                dog,
+                title: 'Dog Profile'
+            },
+            partials: {
+                head: '/partials/head'
             }
         });
     } else {
