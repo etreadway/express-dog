@@ -21,7 +21,7 @@ module.exports = [
     },
     {
         name: 'Fluffy',
-        breed: 'Poodle Mix',
+        breed: 'Pekingese Poodle',
         image: 'temp'
     },
 
