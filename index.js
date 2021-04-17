@@ -54,7 +54,8 @@ app.get('/dog-list/:name', (req, res) => {
                 title: 'Dog Profile'
             },
             partials: {
-                head: '/partials/head'
+                head: '/partials/head',
+                image: 'partials/images'
             }
         });
     } else {

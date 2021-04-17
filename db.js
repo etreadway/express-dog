@@ -2,27 +2,27 @@ module.exports = [
     {
         name: 'Doodle',
         breed: 'Black Lab Mix',
-        image: 'temp'
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg'
     },
     {
         name: 'Burrow',
         breed: 'Corgi Pit Mix ',
-        image: 'temp'
+        image: 'temhttps://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpgp'
     },
     {
         name: 'Ella',
         breed: 'Shih-Tzu Corgi Mix',
-        image: 'temp'
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg'
     },
     {
         name: 'Chloe',
         breed: 'Poodle Mix',
-        image: 'temp'
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg'
     },
     {
         name: 'Fluffy',
         breed: 'Pekingese Poodle',
-        image: 'temp'
+        image: 'https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/dog_cool_summer_slideshow/1800x1200_dog_cool_summer_other.jpg'
     },
 
 ]
