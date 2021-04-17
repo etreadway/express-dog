@@ -8,6 +8,8 @@ const port = 3000;
 const express = require('express');
 const app = express();
 
+const fetch = require('node-fetch');
+
 const es6Renderer = require('express-es6-template-engine');
 app.engine('html', es6Renderer);
 app.set('views', 'templates');
@@ -41,21 +43,27 @@ app.get('/dog-list', (req, res) => {
     });
 });
 
-app.get('/dog-list/:name', (req, res) => {
+app.get('/dog-list/:name', async (req, res) => {
     console.log(req.path);
     const {name} = req.params;
     console.log(name);
     const dog = db.find((thisDog) => thisDog.name === name);
     if (dog) {
         console.log(dog);
+        var pic = await fetch(`https://dog.ceo/api/breed/${dog.breed}/images/random`).then(res => res.json())
+        console.log(pic.message);
+        
+        dog.image = pic.message;
+        
         res.render('dog.html', {
             locals: {
                 dog,
+                // pic,
                 title: 'Dog Profile'
             },
             partials: {
                 head: '/partials/head',
-                image: 'partials/images'
+                image: '/partials/images'
             }
         });
     } else {
@@ -63,6 +71,9 @@ app.get('/dog-list/:name', (req, res) => {
             .send(`No dog found with name '${name}'`);
     }
 });
+
+
+
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}`);
