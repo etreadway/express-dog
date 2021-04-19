@@ -24,6 +24,9 @@ app.use(helmet({
     contentSecurityPolicy: false,
 }));
 
+const morgan = require('morgan');
+app.use(morgan('tiny'));
+
 app.get('/', (req, res) => {
     res.render('home', {
         locals: {
