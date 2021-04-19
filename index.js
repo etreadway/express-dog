@@ -19,6 +19,11 @@ const server = http.createServer(app);
 const db = require('./db');
 const { title } = require('process');
 
+const helmet = require('helmet');
+app.use(helmet({
+    contentSecurityPolicy: false,
+}));
+
 app.get('/', (req, res) => {
     res.render('home', {
         locals: {
