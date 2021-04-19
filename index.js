@@ -50,7 +50,7 @@ app.get('/dog-list/:name', async (req, res) => {
     const dog = db.find((thisDog) => thisDog.name === name);
     if (dog) {
         console.log(dog);
-        var pic = await fetch(`https://dog.ceo/api/breed/${dog.breed}/images/random`).then(res => res.json())
+        var pic = await fetch(`https://dog.ceo/api/breed/${dog.breed}/images/random`).then(res => res.json());
         console.log(pic.message);
         
         dog.image = pic.message;
