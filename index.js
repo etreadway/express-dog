@@ -27,6 +27,8 @@ app.use(helmet({
 const morgan = require('morgan');
 app.use(morgan('tiny'));
 
+app.use(express.static('public'));
+
 app.get('/', (req, res) => {
     res.render('home', {
         locals: {
